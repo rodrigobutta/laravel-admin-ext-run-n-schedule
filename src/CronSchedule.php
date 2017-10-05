@@ -1,6 +1,6 @@
 <?php
 
-namespace RodrigoButta\Admin\Scheduling;
+namespace RodrigoButta\Admin\RunSchedule;
 
 /*
  * Plugin:        StreamlineFoundation

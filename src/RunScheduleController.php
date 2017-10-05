@@ -1,12 +1,12 @@
 <?php
 
-namespace Encore\Admin\Scheduling;
+namespace Encore\Admin\RunSchedule;
 
 use Encore\Admin\Facades\Admin;
 use Encore\Admin\Layout\Content;
 use Illuminate\Http\Request;
 
-class SchedulingController
+class RunScheduleController
 {
     /**
      * Index interface.
@@ -18,7 +18,7 @@ class SchedulingController
         return Admin::content(function (Content $content) {
             $content->header('Task scheduling');
 
-            $scheduling = new Scheduling();
+            $scheduling = new RunSchedule();
 
             $content->body(view('laravel-admin-ext-run-n-schedule::index', [
                 'events' => $scheduling->getTasks(),
@@ -33,7 +33,7 @@ class SchedulingController
      */
     public function runEvent(Request $request)
     {
-        $scheduling = new Scheduling();
+        $scheduling = new RunSchedule();
 
         try {
             $output = $scheduling->runTask($request->get('id'));

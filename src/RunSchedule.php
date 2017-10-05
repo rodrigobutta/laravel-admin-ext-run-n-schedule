@@ -1,13 +1,13 @@
 <?php
 
-namespace RodrigoButta\Admin\Scheduling;
+namespace RodrigoButta\Admin\RunSchedule;
 
 use RodrigoButta\Admin\Admin;
 use RodrigoButta\Admin\Extension;
-use Illuminate\Console\Scheduling\CallbackEvent;
+use Illuminate\Console\RunSchedule\CallbackEvent;
 use Illuminate\Support\Str;
 
-class Scheduling extends Extension
+class RunSchedule extends Extension
 {
     /**
      * @var string out put file for command.
@@ -23,7 +23,7 @@ class Scheduling extends Extension
     {
         app()->make('Illuminate\Contracts\Console\Kernel');
 
-        return app()->make('Illuminate\Console\Scheduling\Schedule')->events();
+        return app()->make('Illuminate\Console\RunSchedule\Schedule')->events();
     }
 
     /**
@@ -92,7 +92,7 @@ class Scheduling extends Extension
     {
         set_time_limit(0);
 
-        /** @var \Illuminate\Console\Scheduling\Event $event */
+        /** @var \Illuminate\Console\RunSchedule\Event $event */
         $event = $this->getKernelEvents()[$id - 1];
 
         $event->sendOutputTo($this->getOutputTo());
@@ -145,8 +145,8 @@ class Scheduling extends Extension
     {
         parent::routes(function ($router) {
             /* @var \Illuminate\Routing\Router $router */
-            $router->get('scheduling', 'RodrigoButta\Admin\Scheduling\SchedulingController@index')->name('scheduling-index');
-            $router->post('scheduling/run', 'RodrigoButta\Admin\Scheduling\SchedulingController@runEvent')->name('scheduling-run');
+            $router->get('scheduling', 'RodrigoButta\Admin\RunSchedule\RunScheduleController@index')->name('scheduling-index');
+            $router->post('scheduling/run', 'RodrigoButta\Admin\RunSchedule\RunScheduleController@runEvent')->name('scheduling-run');
         });
     }
 
@@ -155,8 +155,8 @@ class Scheduling extends Extension
      */
     public static function import()
     {
-        parent::createMenu('Scheduling', 'scheduling', 'fa-clock-o');
+        parent::createMenu('RunSchedule', 'scheduling', 'fa-clock-o');
 
-        parent::createPermission('Scheduling', 'ext.scheduling', 'scheduling*');
+        parent::createPermission('RunSchedule', 'ext.scheduling', 'scheduling*');
     }
 }

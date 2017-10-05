@@ -1,10 +1,10 @@
 <?php
 
-namespace RodrigoButta\Admin\Scheduling;
+namespace RodrigoButta\Admin\RunSchedule;
 
 use Illuminate\Support\ServiceProvider;
 
-class SchedulingServiceProvider extends ServiceProvider
+class RunScheduleServiceProvider extends ServiceProvider
 {
     /**
      * {@inheritdoc}
@@ -13,6 +13,6 @@ class SchedulingServiceProvider extends ServiceProvider
     {
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'laravel-admin-ext-run-n-schedule');
 
-        Scheduling::boot();
+        RunSchedule::boot();
     }
 }
