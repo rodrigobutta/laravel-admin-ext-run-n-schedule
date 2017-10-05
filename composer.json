@@ -1,0 +1,36 @@
+{
+    "name": "rodrigobutta/run-n-schedule",
+    "description": "Extension: Task run & schedule",
+    "type": "library",
+    "keywords": ["laravel-admin", "task", "schedule", "run"],
+    "homepage": "https://github.com/rodrigobutta/run-n-schedule",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "rodrigobutta",
+            "email": "rbutta@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.0.0",
+        "laravel/framework": "5.5.*",
+        "rodrigobutta/laravel-admin": ">1.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~6.0",
+        "laravel/laravel": "5.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "RodrigoButta\\Admin\\Scheduling\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "RodrigoButta\\Admin\\Scheduling\\SchedulingServiceProvider"
+            ]
+
+        }
+    }
+}
