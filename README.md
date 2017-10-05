@@ -7,7 +7,7 @@ Laravel Admin Extension: Run n' Schedule
 $ composer require rodrigobutta/laravel-ext-run-n-schedule
 
 
-$ php artisan admin:import scheduling
+$ php artisan admin:import
 ```
 
 

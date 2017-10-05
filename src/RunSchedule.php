@@ -23,7 +23,7 @@ class RunSchedule extends Extension
     {
         app()->make('Illuminate\Contracts\Console\Kernel');
 
-        return app()->make('Illuminate\Console\RunSchedule\Schedule')->events();
+        return app()->make('Illuminate\Console\Scheduling\Schedule')->events();
     }
 
     /**

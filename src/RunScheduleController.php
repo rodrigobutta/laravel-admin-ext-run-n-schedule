@@ -1,9 +1,9 @@
 <?php
 
-namespace Encore\Admin\RunSchedule;
+namespace RodrigoButta\Admin\RunSchedule;
 
-use Encore\Admin\Facades\Admin;
-use Encore\Admin\Layout\Content;
+use RodrigoButta\Admin\Facades\Admin;
+use RodrigoButta\Admin\Layout\Content;
 use Illuminate\Http\Request;
 
 class RunScheduleController
